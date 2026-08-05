@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<body>
+    <form action="/guardar" method="post">
+        <fieldset>
+            <legend>Cuenta la leyenda que habian un montón de Radio Buttons</legend>
+            <label>
+                <input type="radio" value="presencial" name="modalidad">Dicen por ahi que soy la opción Presencial
+            </label>
+            <br>
+            <label>
+                <input type="radio" value="virtual" name="modalidad">Dicen por ahi que soy la opción Virtual
+            </label>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Cuenta la leyenda que soy un select</legend>
+            <label for="turno">Turno:</label><br>
+            <select name="turno" id="turno">
+                <option value="A">Dicen por ahi que soy la opción A</option>
+                <option value="B">Dicen por ahi que soy la opción B</option>
+                <option value="C">Nadie dijo nada por ahi, pero soy la opción C</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Y ahora cuenta la leyenda que soy una caja de texto</legend>
+            <label for="comentario">Comentario:</label><br>
+            <textarea name="comentario" id="comentario" placeholder="En teoria soy un placeholder...?"></textarea>
+        </fieldset>
+
+        <hr>
+
+        <button type="submit">Enviar mi data privada</button>
+        <button type="reset">cls</button>
+        <button type="button">No hago nada, creo</button>
+    </form>
+</body>
