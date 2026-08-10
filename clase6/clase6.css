@@ -1,0 +1,12 @@
+h1,p {
+    background-color: rgb(255, 217, 196);
+    margin: 8px;
+}
+
+#principal {
+    background-color: rgb(252, 198, 144);
+}
+
+p {
+    background-color: rgb(234, 207, 145);
+}
