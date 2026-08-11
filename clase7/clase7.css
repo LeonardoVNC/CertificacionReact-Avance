@@ -1,0 +1,15 @@
+.parrafo{
+    color: red;
+}
+
+.verde {
+    background-color: rgb(177, 255, 177);
+}
+
+form label {
+    color: blue;
+}
+
+input[required] {
+    background-color: rgb(233, 175, 175);
+}
