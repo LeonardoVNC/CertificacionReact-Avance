@@ -1,0 +1,82 @@
+.contenedor {
+    background-color: rgb(255, 242, 192);
+    padding: 10px;
+    margin: 4px;
+}
+
+.memoria {
+    background-color: rgb(255, 232, 181);
+    border: 6px solid rgb(255, 190, 46);
+    padding: 1px;
+    margin: 16px;
+    border-radius: 15px;
+}
+
+.memoria tr td {
+    background-color: rgb(255, 226, 121);
+    border: 2px solid rgb(255, 190, 46);
+    border-radius: 8px;
+    width: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: transparent;
+}
+
+.memoria tr td:hover {
+    background-color: rgb(220, 198, 101);
+    color: rgb(0, 0, 0);
+}
+
+.pista {
+    background-color: rgb(255, 201, 130);
+    border-top: 4px solid rgb(200, 78, 69);
+    border-bottom: 4px solid rgb(200, 78, 69);
+    border-radius: 10px;
+    width: 24rem;
+}
+
+.corredor {
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-bottom: 2px dashed rgb(224, 111, 12);
+    transition: padding-left 1.5s;
+}
+
+.corredor:hover {
+    padding-left: 21rem;
+}
+
+.normal {
+    width: 22rem;
+    padding: 1rem;
+    background-color: gray;
+    border: 2px solid black;
+    position: static;
+}
+
+.referencia {
+    width: 22rem;
+    padding: 1rem;
+    background-color: gray;
+    border: 2px solid black;
+    left: 2rem;
+    position: relative;
+}
+
+.tarjeta {
+    width: 22rem;
+    padding: 1rem;
+    background-color: gray;
+    border: 2px solid black;
+    position: relative;
+}
+
+.etiqueta {
+    padding: 0.5rem;
+    background-color: orange;
+    border: 2px solid black;
+    position: absolute;
+    top: 2rem;
+    left: 8rem;
+}
