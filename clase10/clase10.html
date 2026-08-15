@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="clase10.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="cabecera-blog">
+            <a class="marca-blog" href="#inicio">Ola, soy un link al mero inicio</a>
+            <nav>
+                <a href="#inicio">Soy un link a: Inicio (si soy el mismo link, algun problema?)</a>
+                <a href="#articulo">Soy un link a: Articulo</a>
+                <a href="#contacto">Soy un link a: Contacto</a>
+            </nav>
+        </header>
+
+        <article id="articulo" class="entrada">
+            <h1>Que onda gentita</h1>
+            <p class="resumen">Se supone que soy un resumen... Abstract?</p>
+            <section>
+                <h2>Primero</h2>
+                <p>Aprovechando que hice el chiste de abstract, vengo a decir que me gusta mucho LaTeX</p>
+                <p>Aunque me molesta un poco Overleaf 🐢</p>
+            </section>
+            <section>
+                <h2>Segundo</h2>
+                <p>Argentina</p>
+                <a href="#conclusion">
+                    Soy un link a la conclusión... que esta aqui justo abajo, no sé bien para que me
+                    usarías, pero aja, dame click amigouu
+                </a>
+            </section>
+            <section id="conclusion">
+                <h2>Conclusión</h2>
+                <p>Los objetivos del trabajo fueron completados, creo</p>
+            </section>
+        </article>
+    </div>
+
+    <div class="contenedor">
+        <p class="bloque">Boeanas soy un parrafo con block, ocupo tooooooodo boeeee</p>
+        <a class="en-linea" href="#articulo">Buenas, yo soy alguien tranqui, comparto cuarto con Bob</a>
+        <a class="en-linea" href="#conclusion">Ola soy bob</a>
+        <p class="oculto">
+            No le digan a nadie pero yo no salgo en ningún lado, aprovecho que estoy oculto para decir que el tesoro
+            esta en
+        </p>
+        <p class="oculto">
+            Eso y, me duelen los ojos
+        </p>
+    </div>
+
+    <div class="contenedor">
+        <p>Que onda gente, tercer jueguito, ahora vamos a... cazar la estrella?... Belen?</p>
+
+        <main class="tablero">
+            <input id="estrella-encontrada" type="checkbox">
+            <label class="estrella" for="estrella-encontrada">&#11088;</label>
+            <p class="ganaste">Estrella encontrada</p>
+        </main>
+
+    </div>
+</body>
+
+</html>

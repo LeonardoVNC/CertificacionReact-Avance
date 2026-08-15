@@ -1,0 +1,134 @@
+.contenedor {
+    background-color: rgb(255, 242, 192);
+    padding: 12px;
+    margin: 8px;
+}
+
+.marca-blog {
+    font-size: 2rem;
+    font-family: system-ui;
+    color: rgb(231, 144, 77);
+}
+
+.cabecera-blog {
+    padding: 1rem;
+    background-color: rgb(246, 198, 110);
+    border: 2.5px solid rgb(179, 118, 21);
+}
+
+.cabecera-blog nav a {
+    margin-right: 1.25rem;
+    color: rgb(104, 66, 37);
+}
+
+.entrada {
+    width: 100%;
+    max-width: 50rem;
+    margin-top: 0.5rem;
+    padding: 1.5rem;
+    background-color: rgb(255, 237, 203);
+    border: 2px solid rgb(179, 118, 21);
+}
+
+.entrada h1 {
+    margin-top: 0;
+    color: rgb(121, 71, 32);
+}
+
+.resumen {
+    padding: .75rem;
+    background-color: rgb(255, 201, 92);
+    border-left: 4px solid rgb(121, 71, 32);
+}
+
+.entrada section {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(121, 71, 32);
+}
+
+.entrada h2 {
+    color: rgb(121, 71, 32);
+}
+
+.entrada a {
+    color: rgb(255, 149, 69);
+    border-bottom: 2px solid rgb(121, 71, 32)
+}
+
+.entrada a:hover {
+    color: rgb(59, 53, 48);
+    background-color: rgb(255, 201, 160);
+}
+
+
+.bloque {
+    display: block;
+    padding: .75rem;
+    background-color: rgb(255, 201, 160);
+    border: 2px solid rgb(225, 123, 45);
+}
+
+.en-linea {
+    display: inline;
+    padding: .75rem;
+    background-color: rgb(255, 201, 160);
+    border: 2px solid rgb(225, 123, 45);
+}
+
+.oculto {
+    display: none;
+}
+
+
+.estrella {
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+    padding: .5rem;
+    font-size: 2rem;
+    background-color: #FFF4D6;
+    border: 2px solid #D6A93A;
+    cursor: pointer;
+}
+
+.estado {
+    padding: .5rem;
+    background-color: #F4F7FA;
+    border: 2px solid #B8C2CC;
+}
+
+/* 
+Esta medio turbio asi que, explico el coso... 
+#estrella-encontrada es el checkbox
+:checked confirma si ya lo clickeaste o aun no
+~ busca a los hermanos del elemento
+.estado es la class del p hermano de checkbox
+*/
+#estrella-encontrada:checked ~ .estado {
+    color: white;
+    background-color: #145DA0;
+    border-color: #0B3D6E;
+}
+
+.tablero {
+    position: relative;
+    width: 28rem;
+    height: 16rem;
+    background-color: #E8F3E8;
+    border: 3px solid #79A879;
+}
+
+.ganaste {
+    display: none;
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    padding: .5rem;
+    color: white;
+    background-color: #145DA0;
+    border: 2px solid #0B3D6E;
+}
+
+#estrella-encontrada:checked ~ .ganaste {
+    display: block;
+}
