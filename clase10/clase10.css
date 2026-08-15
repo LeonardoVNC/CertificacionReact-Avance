@@ -104,7 +104,7 @@ Esta medio turbio asi que, explico el coso...
 ~ busca a los hermanos del elemento
 .estado es la class del p hermano de checkbox
 */
-#estrella-encontrada:checked ~ .estado {
+#estrella-encontrada:checked~.estado {
     color: white;
     background-color: #145DA0;
     border-color: #0B3D6E;
@@ -129,6 +129,122 @@ Esta medio turbio asi que, explico el coso...
     border: 2px solid #0B3D6E;
 }
 
-#estrella-encontrada:checked ~ .ganaste {
+#estrella-encontrada:checked~.ganaste {
     display: block;
+}
+
+
+.aplicacion {
+    width: 22rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: rgb(255, 247, 225);
+    border: 2px solid rgb(218, 164, 15);
+    border-radius: .75rem;
+}
+
+.aplicacion h1 {
+    margin-top: 0;
+    color: rgb(173, 128, 5);
+}
+
+.tarea {
+    padding: 1rem;
+    background-color: rgb(247, 242, 155);
+    border: 2px solid rgb(218, 164, 15);
+    border-radius: .5rem;
+}
+
+.tarea label {
+    color: rgb(119, 91, 14);
+    cursor: pointer;
+}
+
+.tarea input:checked~h2 {
+    color: rgb(127, 131, 114);
+}
+
+.tarea input:checked~.estado {
+    color: rgb(34, 101, 5);
+    background-color: rgb(192, 235, 174);
+    border-color: rgb(39, 113, 8);
+}
+
+
+.fila {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.fila span,
+.columna span {
+    padding: .75rem;
+    background-color: #DCECF9;
+    border: 2px solid #7AAED6;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #E8F3E8;
+    border: 2px solid #79A879;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tarjeta {
+    width: 14rem;
+    padding: 1rem;
+    background-color: #FFF4D6;
+    border: 2px solid #D6A93A;
+}
+
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    max-width: 32rem;
+}
+
+/* Empujar un elemento usando el espacio libre */
+.salir {
+    margin-left: auto;
+}
+
+/* Alinear un solo item */
+.formulario button {
+    align-self: flex-start;
+}
+
+/* Asignar crecimiento y una base */
+.tarjeta {
+    flex: 1 1 14rem;
 }
