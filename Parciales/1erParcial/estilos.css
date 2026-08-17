@@ -18,32 +18,31 @@
 }
 
 .carrera-pista {
+    display: flex;
+    width: 100%;
     margin-top: 1rem;
     background-color: rgb(255, 201, 130);
     border: 3px solid rgb(184, 113, 20);
     border-radius: 8px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
-.carrera-marca {
-    height: 13rem;
-    width: 1rem;
-    background-color: transparent;
-    border-left: 3px dashed;
-    border-color: rgb(255, 255, 255);
-    position: fixed;
-    left: 91.4rem;
-    top: 12.25rem;
+.carrera-corredores {
+    width: 95%;
 }
 
 .carrera-corredor {
     font-size: 2rem;
     padding: 0.5rem;
-    border-bottom: 2px dashed rgb(224, 111, 12);
     transition: padding-left 0.5s;
 }
 
 .carrera-checkbox:checked~.carrera-pista .carrera-corredor {
-    padding-left: 90rem;
+    padding-left: 100%;
+}
+
+.carrera-marca {
+    width: 5%;
+    background-color: transparent;
+    border-left: 3px dashed;
+    border-color: rgb(255, 255, 255);
 }
