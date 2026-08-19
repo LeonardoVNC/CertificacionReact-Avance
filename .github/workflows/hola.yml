@@ -17,3 +17,5 @@ jobs:
         run: pwd
       - name: checo que archivos hay aca
         run: ls -la
+      - name: dame un poco de ese nodejs
+        uses: actions/setup-node@v4
