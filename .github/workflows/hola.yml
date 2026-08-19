@@ -1,0 +1,12 @@
+name: Hola Gente
+
+on:
+  workflow_dispatch:
+
+jobs:
+  buenas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: saluditos
+        run: echo "Como va todo muchachosss"
