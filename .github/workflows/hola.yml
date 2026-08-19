@@ -21,3 +21,5 @@ jobs:
         uses: actions/setup-node@v4
       - name: confirmo si me dieron un poco de ese nodejs
         run: node -v
+      - name: confirmo si también me dieron un poco de npm
+        run: npm -v
