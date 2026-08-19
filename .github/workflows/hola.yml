@@ -19,3 +19,5 @@ jobs:
         run: ls -la
       - name: dame un poco de ese nodejs
         uses: actions/setup-node@v4
+      - name: confirmo si me dieron un poco de ese nodejs
+        run: node -v
