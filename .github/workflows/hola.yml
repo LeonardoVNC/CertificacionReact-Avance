@@ -11,3 +11,5 @@ jobs:
     steps:
       - name: saluditos
         run: echo "Como va todo muchachosss"
+      - name: lee mi codigo
+        uses: actions/checkout@v4
