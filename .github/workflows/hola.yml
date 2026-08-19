@@ -15,3 +15,5 @@ jobs:
         uses: actions/checkout@v4
       - name: checo donde estoy
         run: pwd
+      - name: checo que archivos hay aca
+        run: ls -la
