@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: saluditos
+      - name: saludo
         run: echo "Como va todo muchachosss"
-      - name: lee mi codigo
+      - name: descargo mi codigo
         uses: actions/checkout@v4
+      - name: checo donde estoy
+        run: pwd
