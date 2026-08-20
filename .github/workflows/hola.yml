@@ -23,3 +23,7 @@ jobs:
         run: node -v
       - name: confirmo si también me dieron un poco de npm
         run: npm -v
+      - name: me saco unas cuantas librerias
+        run: npm ci
+      - name: checo si el código funciona (no lo hace pq tengo funciones sin usar)
+        run: npm run check-js
