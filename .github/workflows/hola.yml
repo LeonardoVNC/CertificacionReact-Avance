@@ -1,7 +1,7 @@
 name: Hola Gente
 
 on:
-  push:
+  # push:
   workflow_dispatch:
 
 jobs:
