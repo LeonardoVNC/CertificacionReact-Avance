@@ -20,3 +20,6 @@ function check(input) {
         console.log("Todo salio bien, wiii")
     }
 }
+
+// Solo para evadir la notif de eslint 
+export { bombaStr, tortugaStr, init, check }

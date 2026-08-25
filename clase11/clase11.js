@@ -5,3 +5,6 @@ function buenaPablo() {
 function buena(nombre) {
     console.log("Bueeeeeeena " + nombre)
 }
+
+// Solo para evadir la notif de eslint 
+export {buenaPablo, buena}
