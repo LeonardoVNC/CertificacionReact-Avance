@@ -1,0 +1,26 @@
+.contenedor {
+    background-color: rgb(255, 238, 193);
+    padding: 5px;
+}
+
+.buscaminas {
+    background-color: rgb(255, 238, 183);
+    padding: 1px;
+    border: 8px solid rgb(255, 198, 42);
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.buscaminas tr td {
+    font-size: 40px;
+    background-color: rgb(255, 222, 112);
+    border-radius: 10px;
+    width: 4.5rem;
+    height: 4.5rem;
+    text-align: center;
+    color: transparent;
+}
+
+.buscaminas tr td:hover {
+    background-color: rgb(224, 197, 109);
+}
