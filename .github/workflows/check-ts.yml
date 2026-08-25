@@ -1,0 +1,28 @@
+name: Verificar TS
+
+on:
+    workflow_dispatch:
+
+jobs:
+    Verificar:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Descargar codigo
+              uses: actions/checkout@v4
+            - name: Descargar nodeJS
+              uses: actions/setup-node@v4
+            - name: Confirmar nodeJS
+              run: node -v
+            - name: Confirmo npm
+              run: npm -v
+            - name: Descargar librerias
+              run: npm ci
+            - name: Descargar TSC
+              run: npm i typescript
+            - name: Confirmar TSC
+              run: tsc -v
+            - name: Verificamos donde estamos
+              run: ls -la
+            - name: Verificar archivo TS de la ultima clase
+              run: tsc --noEmit clase16/buscaminas.ts
