@@ -25,4 +25,4 @@ jobs:
             - name: Verificamos donde estamos
               run: ls -la
             - name: Verificar archivo TS de la ultima clase
-              run: tsc --noEmit clase16/buscaminas.ts
+              run: tsc --noEmit Parcial2/clase16/buscaminas.ts
