@@ -5,6 +5,7 @@ on:
 
 permissions:
     id-token: write
+    contents: read
 
 jobs:
     Deployando:
@@ -30,7 +31,6 @@ jobs:
             - name: Guardamos el dist
               uses: actions/upload-pages-artifact@v4
               with:
-                  name: web-application-page
                   path: ./Parcial2/clase19/otro-proyecto/dist
             - name: Configuramos GH Pages
               uses: actions/configure-pages@v5
