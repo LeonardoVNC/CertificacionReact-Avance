@@ -25,9 +25,9 @@ jobs:
             - name: Hacer build del proyecto
               run: npx vite build
             - name: Guardamos el dist
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-pages-artifact@v4
               with:
-                  name: web-application
+                  name: web-application-page
                   path: ./Parcial2/clase19/otro-proyecto/dist
             - name: Configuramos GH Pages
               uses: actions/configure-pages@v5
