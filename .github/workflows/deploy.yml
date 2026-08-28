@@ -31,3 +31,5 @@ jobs:
                   path: ./Parcial2/clase19/otro-proyecto/dist
             - name: Configuramos GH Pages
               uses: actions/configure-pages@v5
+            - name: Publicamos la página (ahorasi)
+              uses: actions/deploy-pages@v4
