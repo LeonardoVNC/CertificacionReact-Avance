@@ -1,5 +1,21 @@
 export default function TresEnRaya() {
     return <section>
-        Hola larva
+        <table>
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+            </tr>
+        </table>
     </section>
 }

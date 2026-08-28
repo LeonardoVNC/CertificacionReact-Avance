@@ -1,0 +1,10 @@
+td {
+    width: 4rem;
+    height: 4rem;
+    border: 2.5px solid rgb(231, 156, 71);
+    background-color: rgb(250, 233, 172);
+}
+
+table {
+    border-collapse: collapse;
+}

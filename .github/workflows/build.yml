@@ -1,0 +1,33 @@
+name : buil
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+jobs:
+    Exportar_dist:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Descargar codigo
+              uses: actions/checkout@v4
+            - name: Descargar nodeJS
+              uses: actions/setup-node@v4
+            - name: Confirmar nodeJS
+              run: node -v
+            - name: Confirmo npm
+              run: npm -v
+            - name: Descargar librerias
+              run: npm ci
+            - name: Verificamos donde estamos
+              run: ls -la
+            - name: Ingresar al directorio del proyecto
+              run: cd Parcial2/clase17/tres-en-raya
+            - name: Hacer build del proyecto
+              run: npx vite build
+            - name: Guardamos el dist
+              uses: actions/upload-artifact@v4
+              with:
+                name: web-application
+                path: ./dist 
