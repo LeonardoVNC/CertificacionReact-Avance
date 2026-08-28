@@ -3,6 +3,9 @@ name: deploy
 on:
     workflow_dispatch:
 
+permissions:
+    id-token: write
+
 jobs:
     Deployando:
         runs-on: ubuntu-latest
