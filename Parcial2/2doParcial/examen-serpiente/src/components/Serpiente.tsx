@@ -58,7 +58,7 @@ function Serpiente() {
 
         for (let fila = 0; fila < tablero.length; fila++) {
             for (let col = 0; col < tablero[fila].length; col++) {
-                if (typeof tablero[fila][col] === 'number' && tablero[fila][col] > numeroCabeza) {
+                if (typeof tablero[fila][col] === 'number' && (tablero[fila][col] as number) > numeroCabeza) {
                     numeroCabeza = tablero[fila][col] as number
                     posicionCabeza = { fila, columna: col }
                 }
@@ -78,7 +78,7 @@ function Serpiente() {
 
         const celdaDestino = tablero[nuevaFila][nuevaColumna]
 
-        if (typeof celdaDestino === 'number' && celdaDestino > 0) {
+        if (typeof celdaDestino === 'number' && (celdaDestino as number) > 0) {
             setJuegoActivo(false)
             alert('Chao amigo, te comiste... solo...? Ouroboros?')
             return
@@ -96,7 +96,7 @@ function Serpiente() {
         } else {
             for (let fila = 0; fila < tableroNuevo.length; fila++) {
                 for (let col = 0; col < tableroNuevo[fila].length; col++) {
-                    if (typeof tableroNuevo[fila][col] === 'number' && tableroNuevo[fila][col] > 0) {
+                    if (typeof tableroNuevo[fila][col] === 'number' && (tableroNuevo[fila][col] as number) > 0) {
                         tableroNuevo[fila][col] = (tableroNuevo[fila][col] as number) - 1
                     }
                 }
@@ -129,7 +129,7 @@ function Serpiente() {
                                         let numeroMaximo = -1
                                         for (let f = 0; f < tablero.length; f++) {
                                             for (let c = 0; c < tablero[f].length; c++) {
-                                                if (typeof tablero[f][c] === 'number' && tablero[f][c] > numeroMaximo) {
+                                                if (typeof tablero[f][c] === 'number' && (tablero[f][c] as number) > numeroMaximo) {
                                                     numeroMaximo = tablero[f][c] as number
                                                 }
                                             }
@@ -138,7 +138,7 @@ function Serpiente() {
                                             return <td key={colIdx} className="comida">{celda}</td>
                                         } else if (typeof celda === 'number' && celda === numeroMaximo) {
                                             return <td key={colIdx} className="cabeza">{celda}</td>
-                                        } else if (typeof celda === 'number' && celda > 0) {
+                                        } else if (typeof celda === 'number' && (celda as number) > 0) {
                                             return <td key={colIdx} className="cuerpo">{celda}</td>
                                         } else {
                                             return <td key={colIdx} className="fondo">{celda}</td>
