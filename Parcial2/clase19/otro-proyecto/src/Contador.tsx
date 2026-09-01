@@ -1,7 +1,11 @@
 import { useState } from "react";
 
-function Contador() {
-    const [contador, setContador] = useState<number>(0);
+interface ContadorProps {
+    startsAt?: number
+}
+
+function Contador({ startsAt = 0 }: ContadorProps) {
+    const [contador, setContador] = useState<number>(startsAt);
 
     const contar = (): void => {
         setContador(contador + 1)
