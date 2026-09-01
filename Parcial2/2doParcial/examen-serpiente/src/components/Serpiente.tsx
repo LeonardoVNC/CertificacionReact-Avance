@@ -39,8 +39,11 @@ function Serpiente() {
     const tableroInicio: Tablero = colocarFruta(setInicio())
 
     const [tablero, setTablero] = useState<Tablero>(tableroInicio);
+    const [juegoActivo, setJuegoActivo] = useState(true);
 
     const manejarTecla = (evento: KeyboardEvent<HTMLDivElement>) => {
+        if (!juegoActivo) return
+
         let direccion: { fila: number; columna: number } | null = null
 
         if (evento.key === 'ArrowUp') direccion = { fila: -1, columna: 0 }
@@ -67,10 +70,19 @@ function Serpiente() {
         const nuevaFila = posicionCabeza.fila + direccion.fila
         const nuevaColumna = posicionCabeza.columna + direccion.columna
 
-        if (nuevaFila < 0 || nuevaFila >= 8 || nuevaColumna < 0 || nuevaColumna >= 8) return
+        if (nuevaFila < 0 || nuevaFila >= 8 || nuevaColumna < 0 || nuevaColumna >= 8) {
+            setJuegoActivo(false)
+            alert('Chao amigo, te comiste un muro')
+            return
+        }
 
         const celdaDestino = tablero[nuevaFila][nuevaColumna]
-        if (typeof celdaDestino === 'number' && celdaDestino > 0) return
+
+        if (typeof celdaDestino === 'number' && celdaDestino > 0) {
+            setJuegoActivo(false)
+            alert('Chao amigo, te comiste... solo...? Ouroboros?')
+            return
+        }
 
         const tableroNuevo = tablero.map(fila => [...fila])
 
@@ -104,8 +116,9 @@ function Serpiente() {
     }
 
     return (
-        <div tabIndex={0} onKeyDown={manejarTecla}>
+        <div tabIndex={0} onKeyDown={manejarTecla} className={juegoActivo ? '' : 'game-over'}>
             <h1>Segundo Parcial - Momento Serpiente</h1>
+            {!juegoActivo && <h2>Chao</h2>}
             <table>
                 <tbody>
                     {
