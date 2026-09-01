@@ -13,7 +13,7 @@ jobs:
         runs-on: ubuntu-latest
         defaults:
             run:
-                working-directory: ./Parcial2/clase19/otro-proyecto/
+                working-directory: ./Parcial2/2doParcial/examen-serpiente/
         steps:
             - name: Descargar codigo
               uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
             - name: Guardamos el dist
               uses: actions/upload-pages-artifact@v4
               with:
-                  path: ./Parcial2/clase19/otro-proyecto/dist
+                  path: ./Parcial2/2doParcial/examen-serpiente/dist
             - name: Configuramos GH Pages
               uses: actions/configure-pages@v5
             - name: Publicamos la página (ahorasi)
