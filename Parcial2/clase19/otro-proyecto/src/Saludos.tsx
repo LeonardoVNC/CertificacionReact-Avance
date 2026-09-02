@@ -1,9 +1,16 @@
+import { useState } from "react"
+
 interface SaludosProps {
     nombre?: string
 }
 function Saludos(props: SaludosProps) {
     const numeritos = [1, 2, 3, 4, 5, 6, 7, 8]
     const dobles = numeritos.map((item) => { return item * 2 })
+    const [numerito, setNumerito] = useState(1)
+
+    setTimeout(() => {
+        setNumerito(numerito + 1)
+    }, 1000)
 
     return (
         <>
@@ -17,6 +24,8 @@ function Saludos(props: SaludosProps) {
                     })}
                     <br />
                     Hay un índice aqui: {dobles.indexOf(10)}
+                    <br />
+                    Hay un mini contador aqui: {numerito}
                 </>
             )}
             {!props.nombre && (
