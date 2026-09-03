@@ -4,13 +4,9 @@ function Reloj() {
     const [segundos, setSegundos] = useState<number>(0)
     useEffect(() => {
         const reloj: number = setInterval(() => {
-            setSegundos((prev) => {
-                return prev++;
-            })
+            setSegundos((prev) => prev + 1)
         }, 1000)
-        return () => {
-            clearInterval(reloj)
-        }
+        return () => clearInterval(reloj)
     }, [])
 
     return (
