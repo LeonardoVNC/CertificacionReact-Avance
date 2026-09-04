@@ -10,6 +10,10 @@
     background-color: rgb(235, 100, 38);
     position: absolute;
     bottom: 0px;
+    transition: left 0.25s;
+    background-image: url(./assets/wide.jpg);
+    background-size: cover; 
+    background-position: center;
 }
 
 .disparo {
@@ -18,12 +22,18 @@
     height: 5rem;
     background: rgb(255, 90, 14);
     transition: bottom 0.45s, left 0.45s;
+    background-image: url(./assets/ah.jpg);
+    background-size: cover; 
+    background-position: center;
 }
 
 .alien {
     position: absolute;
     width: 5rem;
     height: 5rem;
-    background: rgb(67, 182, 29);
+    /* background: rgb(67, 182, 29); */
+    background-image: url(./assets/accidente.png);
+    background-size: cover; 
+    background-position: center;
     transition: top 0.45s, left 0.45s;
 }

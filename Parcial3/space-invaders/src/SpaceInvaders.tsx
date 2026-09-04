@@ -21,11 +21,24 @@ function SpaceInvaders() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    //Bullet..Launcher??
+    const [baseLeft, setBaseLeft] = useState<number>(0)
+
+    const moveBaseLeft = () => {
+        if (baseLeft === 0) return
+        setBaseLeft((prev) => prev - 5)
+    }
+
+    const moveBaseRight = () => {
+        if (baseLeft === 115) return
+        setBaseLeft((prev) => prev + 5)
+    }
+
     //Bulletproof pero sin el proof pq solo es una bala
     const [disparos, setDisparos] = useState<Array<Block>>([])
 
     const addBullet = () => {
-        setDisparos((prev) => [...prev, { x: windowWidth / 2, y: BLOCK_SIZE }])
+        setDisparos((prev) => [...prev, { x: baseLeft + 12.5, y: BLOCK_SIZE }])
     }
 
     const moveBullets = () => {
@@ -58,12 +71,16 @@ function SpaceInvaders() {
         if (evento.code === 'Space') {
             evento.preventDefault();
             addBullet()
+        } else if (evento.code === 'ArrowLeft') {
+            moveBaseLeft()
+        } else if (evento.code === 'ArrowRight') {
+            moveBaseRight()
         }
     }
     useEffect(() => {
         window.addEventListener('keydown', onKeyPressed)
         return () => window.removeEventListener('keydown', onKeyPressed)
-    }, [windowWidth])
+    }, [windowWidth, baseLeft])
 
     // Ticks (tocks waaaaj)
     const onTickDo = () => {
@@ -82,18 +99,22 @@ function SpaceInvaders() {
 
     return (
         <>
-            <div className="arma">
-                Soy una base
+            <div className="arma"
+                style={{
+                    left: `${baseLeft}rem`
+                }}
+            >
+                {/* Soy una base */}
             </div>
             {disparos.map((bullet, idx) => (
                 <div className="disparo" key={idx}
                     style={{
-                        left: `${bullet.x}px`,
+                        left: `${bullet.x}rem`,
                         bottom: `${bullet.y}rem`,
                         transform: 'translateX(-50%)'
                     }}
                 >
-                    x:{bullet.x}, y: {bullet.y}, idx: {idx}
+                    {/* x:{bullet.x}, y: {bullet.y}, idx: {idx} */}
                 </div>
             ))}
             {aliens.map((alien, idx) => (
@@ -104,7 +125,7 @@ function SpaceInvaders() {
                         transform: 'translateX(-50%)'
                     }}
                 >
-                    x:{alien.x}, y:{alien.y}
+                    {/* x:{alien.x}, y:{alien.y} */}
                 </div>
             ))}
         </>
