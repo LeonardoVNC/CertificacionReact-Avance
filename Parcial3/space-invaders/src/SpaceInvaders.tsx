@@ -22,15 +22,17 @@ function SpaceInvaders() {
     }, []);
 
     //Bulletproof pero sin el proof pq solo es una bala
-    const [bulletLeft, setBulletLeft] = useState(windowWidth / 2)
-    const [bulletBottom, setBulletBottom] = useState(BLOCK_SIZE)
+    const [disparos, setDisparos] = useState<Array<Block>>([])
 
-    useEffect(() => {
-        setBulletLeft(windowWidth / 2)
-    }, [windowWidth])
+    const addBullet = () => {
+        setDisparos((prev) => [...prev, { x: windowWidth / 2, y: BLOCK_SIZE }])
+    }
 
-    const moveBullet = () => {
-        setBulletBottom((prev) => prev + BLOCK_SIZE)
+    const moveBullets = () => {
+        setDisparos((prev) => prev.map((bullet) => ({
+            ...bullet,
+            y: bullet.y + BLOCK_SIZE,
+        })))
     }
 
     //No bulletproof pq es un alien acci acci dente el accidente
@@ -51,9 +53,21 @@ function SpaceInvaders() {
         aliens.push({ x: posX, y: 0 })
     }
 
+    // Eventitos
+    const onKeyPressed = (evento: KeyboardEvent) => {
+        if (evento.code === 'Space') {
+            evento.preventDefault();
+            addBullet()
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('keydown', onKeyPressed)
+        return () => window.removeEventListener('keydown', onKeyPressed)
+    }, [windowWidth])
+
     // Ticks (tocks waaaaj)
     const onTickDo = () => {
-        moveBullet()
+        moveBullets()
         moveAliens()
         generateAlien()
     }
@@ -71,27 +85,23 @@ function SpaceInvaders() {
             <div className="arma">
                 Soy una base
             </div>
-            <div style={{
-                position: 'absolute',
-                width: '5rem',
-                height: '5rem',
-                left: `${bulletLeft}px`,
-                bottom: `${bulletBottom}rem`,
-                transform: 'translateX(-50%)',
-                background: 'red'
-            }}>
-                Soy un cuadrado
-            </div>
-            {aliens.map((alien) => (
-                <div
+            {disparos.map((bullet, idx) => (
+                <div className="disparo" key={idx}
                     style={{
-                        position: 'absolute',
-                        width: '5rem',
-                        height: '5rem',
+                        left: `${bullet.x}px`,
+                        bottom: `${bullet.y}rem`,
+                        transform: 'translateX(-50%)'
+                    }}
+                >
+                    x:{bullet.x}, y: {bullet.y}, idx: {idx}
+                </div>
+            ))}
+            {aliens.map((alien, idx) => (
+                <div className="alien" key={idx}
+                    style={{
                         left: `${alien.x}rem`,
                         top: `${alien.y}rem`,
-                        transform: 'translateX(-50%)',
-                        background: 'green'
+                        transform: 'translateX(-50%)'
                     }}
                 >
                     x:{alien.x}, y:{alien.y}

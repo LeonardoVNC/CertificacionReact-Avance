@@ -11,3 +11,19 @@
     position: absolute;
     bottom: 0px;
 }
+
+.disparo {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: rgb(255, 90, 14);
+    transition: bottom 0.45s, left 0.45s;
+}
+
+.alien {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: rgb(67, 182, 29);
+    transition: top 0.45s, left 0.45s;
+}
